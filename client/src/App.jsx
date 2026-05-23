@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/common/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
+import MainLayout from './components/layout/MainLayout'
 
 function App() {
   return (
@@ -13,11 +14,11 @@ function App() {
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <div className="min-h-screen bg-[#0a0f1e] text-white p-8">
-                  <h1 className="text-3xl font-bold text-[#f59e0b]">
-                    🔥 Dashboard — Coming Soon
-                  </h1>
-                </div>
+                <MainLayout title="Dashboard">
+                  <div className="text-white text-2xl font-bold text-[#f59e0b]">
+                    🔥 Dashboard coming next...
+                  </div>
+                </MainLayout>
               </ProtectedRoute>
             }
           />
